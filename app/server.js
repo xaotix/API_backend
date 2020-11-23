@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Rota simples
-app.get("/", function(req, res) {
+app.get("/tarefa", function(req, res) {
   res.json({ message: "notas" });
 });
 

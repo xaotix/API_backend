@@ -1,0 +1,305 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Swagger POO-Avançado",
+    "version": "1.0.0",
+    "description": "API documentação Lista de Tarefas"
+  },
+  "basePath": "/localhost:3000",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/tarefa/get-nota": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Buscar Todas as Notas"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "examples": {
+              "application/json": null
+            }
+          },
+          "400": {
+            "description": "400 Bad Request",
+            "examples": {
+              "application/json": {
+                "message": "Problema na Resposta do Servidor"
+              }
+            }
+          },
+          "500": {
+            "description": "Algum erro ocorreu ao tentar listar as notas.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "application/json": {
+                "message": "Algum erro ocorreu ao tentar listar as notas."
+              }
+            }
+          }
+        },
+        "summary": "Rota para buscar todas as tarefas."
+      }
+    },
+    "/tarefa/add-nota": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Adicionar Notas"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "titulo": {
+                  "type": "string"
+                },
+                "descricao": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "titulo": "Trabalho POO",
+                "descricao": "Pronto para entrega"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "examples": {
+              "application/json": {
+                "message": "Retorna os dados adicionados."
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad Request",
+            "examples": {
+              "application/json": {
+                "message": "Conteúdo não pode estar vazio!"
+              }
+            }
+          },
+          "500": {
+            "description": "Algum erro ocorreu ao criar a nota.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "application/json": {
+                "Error": "Internal server error"
+              }
+            }
+          }
+        },
+        "summary": "Rota para adicionar novas tarefas."
+      }
+    },
+    "/tarefa/get-nota/Id": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Buscar Tarefa por ID"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "examples": {
+              "application/json": {
+                "message": "Retorna a tarefa com sucesso."
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad Request",
+            "examples": {
+              "application/json": {
+                "message": "Nota com id não encontrada."
+              }
+            }
+          },
+          "500": {
+            "description": "Erro ao tentar encontrar Nota com id",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "application/json": {
+                "Error": "Internal server error"
+              }
+            }
+          }
+        },
+        "summary": "Buscar Tarefa por ID."
+      }
+    },
+    "/tarefa/put-nota/Id": {
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Atualizar Tarefa"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "titulo": {
+                  "type": "string"
+                },
+                "descricao": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "titulo": "Novo titulo",
+                "descricao": "Nava descricao"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "examples": {
+              "application/json": {
+                "message": "Retorna tarefa atualizada"
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad Request",
+            "examples": {
+              "application/json": {
+                "message": "Conteúdo não pode estar vazio!"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "application/json": {
+                "Error": "Erro ao fazer o update da nota com o id"
+              }
+            }
+          }
+        },
+        "summary": "Atualizar Tarefa."
+      }
+    },
+    "/tarefa/delete-nota/Id": {
+      "delete": {
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Deletar Nota"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "examples": {
+              "application/json": {
+                "message": "Nota deletada com sucesso!"
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad Request",
+            "examples": {
+              "application/json": {
+                "message": "Nota com o id não encontrada."
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "application/json": {
+                "Error": "Nota com o id não pode ser deletada."
+              }
+            }
+          }
+        },
+        "summary": "Deletar nota especifica."
+      }
+    },
+    "/tarefa/delete-nota": {
+      "delete": {
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Deletar todas as notas"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "examples": {
+              "application/json": {
+                "message": "Todas as notas foram apagadas com sucesso."
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad Request",
+            "examples": {
+              "application/json": {
+                "message": "Problema na Resposta do Servidor"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "application/json": {
+                "Error": "Algum erro aconteceu ao tentar remover todas as notas."
+              }
+            }
+          }
+        },
+        "summary": "Deleta todas as notas."
+      }
+    }
+  }
+}
