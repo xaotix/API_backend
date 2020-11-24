@@ -8,7 +8,7 @@ Como Usar:
 
 2- Entrar no projeto e acessar a pasta app
 
-3- Rodar um "npm install" para instalar as dependências
+3- Rodar o comando "npm install express mysql body-parser --save" para instalar as dependências
 
 4- Após isso é só rodar um "node server.js" para rodar o projeto
 
