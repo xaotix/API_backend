@@ -16,6 +16,6 @@ Como Usar:
 
 Será necessário ter instalado [postman](https://www.postman.com/downloads/) para fazer as chamadas da api.
 
-Para consultar o [swagger](https://editor.swagger.io/) e ver as rotas e parametros
+Consultar o [swagger](https://editor.swagger.io/) para ver as rotas e parametros.
 
 Para Visualizar o swagger é necessário entrar nesse link acima, após isso precisa abrir o projeto copiar todo conteúdo do arquivo swagger.json e colar la no swagger, e será gerada a tabela do swagger automaticamente.
