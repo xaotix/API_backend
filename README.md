@@ -4,15 +4,15 @@ Trabalho destinado a matéria de POO-Avançado, onde desenvolvemos uma api em no
 
 Como Usar:
 
-1- Ter instalado no computador o [nodejs](https://nodejs.org/en/download/)
+1- Ter instalado no computador o [nodejs](https://nodejs.org/en/download/) v12.19.0
 
 2- Clonar o projeto (git clone)
 
 3- Entrar no projeto e acessar a pasta app
 
-4- Rodar o comando "npm install express mysql body-parser --save" para instalar as dependências
+4- Rodar o comando "npm install express@4.17.1 mysql@2.18.1 body-parser@1.19.0 --save" para instalar as dependências de maneira não global com a flag "--save".
 
-5- Após isso é só rodar um "node server.js" para rodar o projeto
+5- Após isso é só rodar o comando "node server.js" na pasta app/ para rodar o projeto na porta 3000.
 
 Será necessário ter instalado [postman](https://www.postman.com/downloads/) para fazer as chamadas da api.
 
