@@ -4,7 +4,9 @@
 
 Linguagem: javascript
 
-Framework: node.js
+Tecnologia: node.js
+
+Framework: ?
 
 Banco de dados: MySQL
 
@@ -19,7 +21,7 @@ Para que serve: é uma API RestFull em node.JS. Serve para comandos CRUD num ban
 Foi fácil de implementar. Apenas algumas alterações. A estrutura atual incorporou a alteração de forma simples e sem problemas.
 
 ### Alterada a tabela “notas”: adicionado campo “denuncia”
-`mysql
+```` mysql
 CREATE TABLE IF NOT EXISTS `notas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(255) NOT NULL,
@@ -27,11 +29,12 @@ CREATE TABLE IF NOT EXISTS `notas` (
   `denuncia` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
-`
+````
 
 ### b)	Adicionada propriedade “denuncia” no código:
 
-``javascript
+
+```` javascript
 // app\models\notas.model.js - Linha 03 :
 const Notas = function(notas) {
   this.titulo = notas.titulo;
@@ -41,7 +44,8 @@ const Notas = function(notas) {
 ``
 ...
 
-``javascript
+
+```` javascript
 
 // app\models\notas.model.js - Linha 55 :
 Notas.updateById = (id, notas, result) => {
@@ -67,7 +71,7 @@ Notas.updateById = (id, notas, result) => {
   );
 };
 
-``
+````
 
 
 
