@@ -1,5 +1,77 @@
 # API_backend
 
+## De que se trata o software 
+
+Linguagem: javascript
+
+Framework: node.js
+
+Banco de dados: MySQL
+
+Design Patterns Usados: MVC
+
+Para que serve: é uma API RestFull em node.JS. Serve para comandos CRUD num banco de dados que administra uma tabela de notas.
+
+## Documentação disponibilizada
+
+## O que seu grupo alterou, como alterou, foi fácil? A estrutura já implementada incorporou isso com facilidade?
+
+Foi fácil de implementar. Apenas algumas alterações. A estrutura atual incorporou a alteração de forma simples e sem problemas.
+
+### Alterada a tabela “notas”: adicionado campo “denuncia”
+`mysql
+CREATE TABLE IF NOT EXISTS `notas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `denuncia` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+`
+
+### b)	Adicionada propriedade “denuncia” no código:
+
+``javascript
+// app\models\notas.model.js - Linha 03 :
+const Notas = function(notas) {
+  this.titulo = notas.titulo;
+  this.descricao = notas.descricao;
+  this.denuncia = notas.denuncia //adicionado
+};
+``
+...
+
+``javascript
+
+// app\models\notas.model.js - Linha 55 :
+Notas.updateById = (id, notas, result) => {
+  sql.query(
+    "UPDATE notas SET titulo = ?, descricao = ?, denuncia = ?  WHERE id = ?",
+    [notas.titulo, notas.descricao, notas.denuncia, id], //adicionado
+    (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+
+      if (res.affectedRows == 0) {
+        // Não achou a Nota com o Id fornecido
+        result({ kind: "not_found" }, null);
+        return;
+      }
+
+      console.log("Nota(s) atualizada(s): ", { id: id, ...Notas });
+      result(null, { id: id, ...Notas });
+    }
+  );
+};
+
+``
+
+
+
+# Documentação Original:
 Trabalho destinado a matéria de POO-Avançado, onde desenvolvemos uma api em nodeJS e MySql para gerenciamento de tarefas. Ele usa um banco de dados na nuvem que já está startado então não precisa ter instalado de fato o MySql instalado na maquina apenas o Workbanch se quiser ter acesso ao banco para verificar se foi salvo os dados no banco, as conexoes se encontram no arquivo app/config/db.config.js, os dados vão estar na tabela é denominada "notas".
 
 Como Usar:
