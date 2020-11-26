@@ -4,6 +4,7 @@ const sql = require("./db.js");
 const Notas = function(notas) {
   this.titulo = notas.titulo;
   this.descricao = notas.descricao;
+  this.denuncia = notas.denuncia //adicionado
 };
 
 Notas.create = function(newNota, result) {
@@ -53,8 +54,8 @@ Notas.getAll = result => {
 
 Notas.updateById = (id, notas, result) => {
   sql.query(
-    "UPDATE notas SET titulo = ?, descricao = ? WHERE id = ?",
-    [notas.titulo, notas.descricao, id],
+    "UPDATE notas SET titulo = ?, descricao = ?, denuncia = ?  WHERE id = ?",
+    [notas.titulo, notas.descricao, notas.denuncia, id], //adicionado
     (err, res) => {
       if (err) {
         console.log("error: ", err);
