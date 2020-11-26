@@ -6,8 +6,6 @@ Linguagem: javascript
 
 Tecnologia: node.js
 
-Framework: ?
-
 Banco de dados: MySQL
 
 Design Patterns Usados: MVC
