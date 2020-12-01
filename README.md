@@ -2,7 +2,7 @@
 
 ## De que se trata o software 
 
-Linguagem: javascript
+Linguagem: Javascript
 
 Tecnologia: node.js
 
@@ -10,9 +10,13 @@ Banco de dados: MySQL
 
 Design Patterns Usados: MVC
 
-Para que serve: é uma API RestFull em node.JS. Serve para comandos CRUD num banco de dados que administra uma tabela de notas.
+Para que serve: É uma API RestFull em node.JS. 
+Serve para comandos CRUD em um banco de dados que administra uma tabela de notas.
 
 ## Documentação disponibilizada
+A documentação disponibilizada está direta e aborda o que é necessário para poder executar a API, passo a passo. 
+Não houveram dificuldades para entender como trabalhar com a API e o que ela utiliza.
+
 
 ## O que seu grupo alterou, como alterou, foi fácil? A estrutura já implementada incorporou isso com facilidade?
 
