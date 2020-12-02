@@ -22,6 +22,11 @@ Não houveram dificuldades para entender como trabalhar com a API e o que ela ut
 
 Foi fácil de implementar. Apenas algumas alterações. A estrutura atual incorporou a alteração de forma simples e sem problemas.
 
+[![Criar denúncia](http://img.youtube.com/vi/auZ3gT_qOi4/0.jpg)](https://www.youtube.com/watch?v=auZ3gT_qOi4 "auZ3gT_qOi4")
+
+https://youtu.be/auZ3gT_qOi4
+
+
 ### Alterada a tabela “notas”: adicionado campo “denuncia”
 ```` mysql
 CREATE TABLE IF NOT EXISTS `notas` (
